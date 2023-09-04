@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenFlix HD</title>
+<link rel="icon" href="https://telegra.ph/file/260c54fe1b68841d3ebe8.png">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+<!-- Estilize seu player de vídeo aqui -->
+.videoClass{
+    width: 48vh;
+    height 21vh;
+}
+.video-js{
+    width: 100%;
+    heigth: 100%;
+}
+</style>
+
+<!-- OWL CAROUSEL -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
+
+<!-- BOX ICONS -->
+
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+<link rel="stylesheet" href="css/grid.css">
+<link rel="stylesheet" href="css/app.css">
+
+</head>
+<body>
+
+<div class="nav-wrapper">
+<div class="container">
+<div class="nav">
+<a href="#" class="logo">
+<i class='bx bx-movie-play bx-tada main-color'></i>Zen<span class="main-color"></span>Flix
+</a>
+<ul class="nav-menu" id="nav-menu">
+<li><a href="index.html">Início</a></li>
+<li><a href="categorias.html">Filmes</a></li>
+</ul>
+<!-- MOBILE MENU -->
+<div class="hamburger-menu" id="hamburger-menu">
+<div class="hamburger"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- END NAV -->
+
+<!-- PRICING SECTION -->
+
+<div class="section">
+<div class="container">
+
+<div class="videoClass">
+<video id="meuVideo" class="video-js" controls width="610" height="264">
+<source src="http://adapte1.shipblackpoint.tk/token:v11expire117si3681link0179511/locfilmes/Emoji-O-Filme.mp4" type="video/mp4">
+Seu navegador não suporta o elemento de vídeo.
+</video>
+</div>
+
+<a href="" class="logo">
+<span class="main-color"></span>
+Emoji: O Filme
+</a>
+
+
+<div class="container">
+<div class="row">
+<div class="col-4 col-md-6 col-sm-12">
+<div class="content">
+
+<p>
+<h4>Sinopse:</h4> Textopolis é a cidade onde os Emojis favoritos dos usuários de smartphones vivem e trabalham. Lá, todos eles vivem em função de um sonho: serem usados nos textos dos humanos. Todos estão acostumados a ter somente uma expressão facial - com exceção de Gene, que nasceu com um bug em seu sistema, que o permite trocar de rosto através de um filtro especial. Determinado à se tornar um emoji normal como todos os outros, eles vai encarar uma jornada fantásticas através dos aplicativos de celular mais populares desta geração - e no meio do caminho, claro, fazer novos amigos.
+</p>
+
+<br>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<!-- COPYRIGHT SECTION -->
+
+<div class="copyright">
+Vídeos e Séries por: Vision Pro <br> Copyright 2022 <a href="https://youtube.com/@jg-bots?si=j8552hQs1o6PizcT" target="_blank">
+JG-Bots</a>
+</div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- OWL CAROUSEL -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
+<!-- APP SCRIPT -->
+<script src="css/app.js"></script>
+<script>
+// Obtenha uma referência para o elemento de vídeo
+const video = document.getElementById('meuVideo');
+
+// Verifique se há uma posição de reprodução salva no localStorage
+if (localStorage.getItem('posicaoVideo')) {
+// Restaure a posição do vídeo
+video.currentTime = parseFloat(localStorage.getItem('posicaoVideo'));
+}
+
+// Ouça o evento 'timeupdate' para atualizar a posição do vídeo no localStorage
+video.addEventListener('timeupdate', function() {
+localStorage.setItem('posicaoVideo', video.currentTime.toString());
+});
+
+// Ouça o evento 'ended' para redefinir a posição quando o vídeo terminar
+video.addEventListener('ended', function() {
+localStorage.removeItem('posicaoVideo');
+});
+</script>
+</html>
